@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Desktop first */
+        /* Mobile first */
+        .header {
+            width: 100%;
+            background-color: #f00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .header .burger {
+            background-color: rgb(133, 133, 182);
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header .burger .line {
+          
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            position: relative;
+            transition: .3s;
+        }
+
+        .header .burger .line::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            bottom: 8px;
+            transition: .3s;
+        }
+
+        .header .burger .line::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            top: 8px;
+            transition: .3s;
+        }
+
+        #check:checked + label .burger .line {
+            background-color: transparent !important;
+        }
+
+        #check:checked + label .burger .line::before {
+            transform: rotate(-45deg);
+            bottom: 0 !important;
+        }
+
+        #check:checked + label .burger .line::after {
+            transform: rotate(45deg);
+            top: 0 !important;
+        }
+        .tug{
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+ 
+            background-image: linear-gradient( to right, red 0 33%, blue 33% 66%, red 66% 100%);
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://news.mn/wp-content/uploads/2018/08/Logo.svg" alt="">
+
+        <input id="check" type="checkbox" >
+        <label for="check">
+            <div class="burger">
+                <div class="line"></div>
+            </div>
+        </label>
+        <!-- <div class="layer"></div> -->
+    </header>
+
+    <div class="tug"></div>
+</body>
+</html>
